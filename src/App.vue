@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import TitleSubtitle from './components/TitleSubtitle.vue';
+import Form from './components/Form.vue';
 </script>
 
 <template>
     <header>
-        <img alt="Vue logo" class="logo" src="./assets/logo.png" width="150" height="150" />
+        <img alt="Vue logo" class="logo sm:h-36 sm:w-36" src="./assets/logo.png" width="75" height="75" />
 
         <div class="wrapper">
             <TitleSubtitle title="Locate IP!" subtitle="Get the location of any ip!" />
         </div>
     </header>
 
-    <main> </main>
+    <main>
+        <Form />
+    </main>
 </template>
 
 <style scoped>
