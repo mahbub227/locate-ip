@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import TitleSubtitle from './components/TitleSubtitle.vue';
 import Form from './components/Form.vue';
+import Map from './components/Map.vue';
+import { useLocationStore } from './stores/location';
+const location = useLocationStore();
 </script>
-
 <template>
     <header>
         <img alt="Vue logo" class="logo sm:h-36 sm:w-36" src="./assets/logo.png" width="75" height="75" />
@@ -14,6 +16,8 @@ import Form from './components/Form.vue';
 
     <main>
         <Form />
+        <Map v-if="location.isValid" />
+        <h2 v-else>No address found!</h2>
     </main>
 </template>
 
