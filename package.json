@@ -12,13 +12,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
     "axios": "^1.4.0",
     "pinia": "^2.1.4",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue3-toastify": "^0.1.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@tsconfig/node18": "^2.0.1",
+    "@types/google.maps": "^3.53.4",
     "@types/node": "^18.16.18",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
