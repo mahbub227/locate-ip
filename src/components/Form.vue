@@ -21,7 +21,7 @@ const getLonLatInfo = async () => {
     if (!ip.isValid) {
         input.value?.focus();
         showError.value = true;
-        location.resetWithError('Invalid IP!');
+        location.resetWithError(content.invalid_ip);
     } else {
         isLoadingAPI.value = true;
         try {
@@ -35,7 +35,7 @@ const getLonLatInfo = async () => {
             isLoadingAPI.value = false;
         } catch (error) {
             toast.error(String(error));
-            location.resetWithError(`Can not locate the IP! ${String(error)}`);
+            location.resetWithError(`${String(error)}, ${content.contact_with_admin}`);
             isLoadingAPI.value = false;
         }
     }
@@ -61,6 +61,7 @@ const getLonLatInfo = async () => {
             :disabled="isLoadingAPI"
             >{{ content.button_label }}</button
         >
+        <p class="max-w-sm text-red-500 text-md" v-if="location.error">{{ location.error }}</p>
     </div>
 </template>
 

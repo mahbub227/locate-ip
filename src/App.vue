@@ -18,7 +18,6 @@ const location = useLocationStore();
     <main>
         <Form />
         <Map v-if="location.isValid" />
-        <p class="text-red-500 text-md" v-if="location.error">{{ location.error }}</p>
     </main>
 </template>
 
