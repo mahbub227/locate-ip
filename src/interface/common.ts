@@ -9,4 +9,10 @@ export interface locationInterface {
     region_code: string;
     country_name: string;
     country_code: string;
+    error: string;
+}
+
+export interface titleSubtitleInterface {
+    title: string;
+    subtitle: string;
 }

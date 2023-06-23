@@ -1,5 +1,5 @@
-import { regExForIp } from '@/config/constants';
 import type { ipInterface } from '@/interface/common';
+import { isIpValid } from '@/utils/helper';
 import { defineStore } from 'pinia';
 
 export const useIpStore = defineStore('ip', {
@@ -14,7 +14,7 @@ export const useIpStore = defineStore('ip', {
     },
     getters: {
         isValid: state => {
-            return state.address.match(regExForIp);
+            return isIpValid(state.address);
         },
     },
 });

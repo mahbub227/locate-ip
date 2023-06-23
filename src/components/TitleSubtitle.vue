@@ -1,38 +1,14 @@
 <script setup lang="ts">
-defineProps<{
-    title: string;
-    subtitle: string;
-}>();
+import type { titleSubtitleInterface } from '@/interface/common';
+
+defineProps<titleSubtitleInterface>();
 </script>
 
 <template>
     <div class="greetings">
-        <h1 class="text-lime-600">{{ title }}</h1>
-        <h3>{{ subtitle }}</h3>
+        <h1 class="text-lime-600 font-bold relative text-2xl text-center lg:text-left">{{ title }}</h1>
+        <h3 class="text-lime-800 text-center lg:text-left">{{ subtitle }}</h3>
     </div>
 </template>
 
-<style scoped>
-h1 {
-    font-weight: 500;
-    font-size: 2.6rem;
-    position: relative;
-    top: -10px;
-}
-
-h3 {
-    font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-    text-align: center;
-}
-
-@media (min-width: 1024px) {
-    .greetings h1,
-    .greetings h3 {
-        text-align: left;
-    }
-}
-</style>
+<style scoped></style>

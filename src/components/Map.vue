@@ -33,7 +33,7 @@ watch(location, generateMap);
 
 onMounted(async () => {
     try {
-        await loader.load();
+        await loader.importLibrary('maps');
         await generateMap();
     } catch (error) {
         toast.error(String(error));
@@ -41,7 +41,9 @@ onMounted(async () => {
 });
 </script>
 <template>
-    <p>{{ `${location.city}, ${location.region_code}, ${location.country_name}` }}</p>
-    <div ref="mapDiv" id="map" class="map" style="width: 100%; height: 80vh"></div>
+    <p class="text-cyan-700 text-base">
+        <b>Location:</b>{{ ` ${location.city}, ${location.region_code}, ${location.country_name}` }}
+    </p>
+    <div ref="mapDiv" id="map" class="mt-4 w-full h-[50vh]"></div>
 </template>
 <style scoped></style>

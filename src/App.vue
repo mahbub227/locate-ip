@@ -1,51 +1,25 @@
 <script setup lang="ts">
-import TitleSubtitle from './components/TitleSubtitle.vue';
-import Form from './components/Form.vue';
-import Map from './components/Map.vue';
-import { useLocationStore } from './stores/location';
+import TitleSubtitle from '@/components/TitleSubtitle.vue';
+import Form from '@/components/Form.vue';
+import Map from '@/components/Map.vue';
+import { useLocationStore } from '@/stores/location';
+import content from '@/content/common.json';
 const location = useLocationStore();
 </script>
 <template>
-    <header>
-        <img alt="Vue logo" class="logo sm:h-36 sm:w-36" src="./assets/logo.png" width="75" height="75" />
+    <header class="lg:flex lg:place-items-center lg:pr-20">
+        <img alt="Locate IP" class="block m-auto sm:h-24 sm:w-24" src="./assets/logo.png" width="75" height="75" />
 
         <div class="wrapper">
-            <TitleSubtitle title="Locate IP!" subtitle="Get the location of any ip!" />
+            <TitleSubtitle :title="content.app_title" :subtitle="content.app_slogan" />
         </div>
     </header>
 
     <main>
         <Form />
         <Map v-if="location.isValid" />
-        <h2 v-else>No address found!</h2>
+        <p class="text-red-500 text-md" v-if="location.error">{{ location.error }}</p>
     </main>
 </template>
 
-<style scoped>
-header {
-    line-height: 1.5;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-    header {
-        display: flex;
-        place-items: center;
-        padding-right: calc(var(--section-gap) / 2);
-    }
-
-    .logo {
-        margin: 0 2rem 0 0;
-    }
-
-    header .wrapper {
-        display: flex;
-        place-items: flex-start;
-        flex-wrap: wrap;
-    }
-}
-</style>
+<style scoped></style>
