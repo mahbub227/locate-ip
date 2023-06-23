@@ -8,5 +8,6 @@
     "app_title": "Locate IP",
     "app_slogan": "Get the location of any ip!",
     "invalid_ip": "Sorry, the IP is invalid. Please try with a valid IP Address.",
-    "contact_with_admin": "please check with System Administrator."
+    "contact_with_admin": "please check with System Administrator.",
+    "network_error": "please check your internet connection."
 }
